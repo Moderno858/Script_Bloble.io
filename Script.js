@@ -1,6 +1,6 @@
 // ==UserScript==
-// @name          Moderno.Script
-// @namespace    Moderno.Script
+// @name         Script
+// @namespace   Script
 // @version      0.2
 // @description  try to take over the world!
 // @author       Wilker
