@@ -65,6 +65,10 @@ level: 0,
     x: 5,
     html: '<div onclick=sell8()>Sell   barracks</div>'
 }, {
+level: 0,
+    x: 5,
+    html: '<div onclick=sell9()>Sell all</div>'
+}, {
 
 }
 
@@ -89,4 +93,5 @@ window.sell8 = function (){   for (var a = [], d = 0; d < units.length; ++d) uni
     for (var a = [], d = 0; d < units.length; ++d) units[d].type === 2 && units[d].owner == player.sid && getUnitFromPath(units[d].uPath).name === 'Tank Factory' && a.push(units[d].id);socket.emit("3", a)
     for (var a = [], d = 0; d < units.length; ++d) units[d].type === 2 && units[d].owner == player.sid && getUnitFromPath(units[d].uPath).name === 'Siege Factory' && a.push(units[d].id);socket.emit("3", a)
     for (var a = [], d = 0; d < units.length; ++d) units[d].type === 2 && units[d].owner == player.sid && getUnitFromPath(units[d].uPath).name === 'Blitz Factory' && a.push(units[d].id);socket.emit("3", a)}
-
+window.sell9 = function (){  for (var a = [], d = 0; d < units.length; ++d)(units[d].type === 3 || units[d].type === 2 || units[d].type === 0) && units[d].owner == player.sid && a.push(units[d].id);socket.emit("3", a)
+    }
