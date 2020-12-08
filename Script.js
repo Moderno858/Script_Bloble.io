@@ -111,3 +111,57 @@ window.upar = function (){
 window.upar1 = function (){    for (var i = 0; i < units.length; ++i) 3 == units[i].type && "circle" == units[i].shape && units[i].owner == player.sid && socket.emit("4", units[i].id, 1)}
 window.upar1 = function (){    for (var i = 0; i < units.length; ++i) 3 == units[i].type && "circle" == units[i].shape && units[i].owner == player.sid && socket.emit("4", units[i].id, 0)}
 
+    var contAppend = document.getElementById("gameUiContainer"),
+        menuA = document.createElement("div");
+
+    var code = ['<div id="noobscriptUI">\n'];
+
+    levels.forEach((items, i) => {
+        code.push(i === 0 ? '    <div>\n' : '    <div style="margin-top:7px;">\n');
+        items.forEach((el) => {
+            code.push('        ' + el.html + '\n');
+        })
+        code.push('    </div>\n');
+    })
+    code.push('    <div id="confinfo" style="margin-top:4px; color: white; text-align: center; font-size: 10px; white-space:pre"></div>')
+    code.push('</div>');
+
+    menuA.innerHTML = code.join("");
+    contAppend.insertBefore(menuA, contAppend.firstChild)
+    contAppend.appendChild(toast)
+    var toastTimeout = false;
+    window.showToast = function (msg) {
+        toast.textContent = msg;
+
+        if (toastTimeout) clearTimeout(toastTimeout);
+        else toast.className = "show";
+        toastTimeout = setTimeout(function () {
+            toast.className = 'hide'
+            setTimeout(function () {
+                toast.className = '';
+            }, 400);
+            toastTimeout = false;
+        }, 3000);
+    }
+    window.statusBar = function () {
+        var el = document.getElementById('confinfo');
+        var text = [];
+
+        window.statusItems.forEach((item, i) => {
+            if (i !== 0) text.push('     ');
+            if (item.name) text.push(item.name + ': ');
+            text.push(item.value());
+        })
+
+        el.textContent = text.join('');
+    }
+    window.statusBar();
+
+    window.initFuncs.forEach((func) => {
+        func();
+    })
+}
+setTimeout(() => {
+    window.makeUI();
+}, 1000)
+
