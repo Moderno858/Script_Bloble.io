@@ -47,7 +47,11 @@ window.UIList.push({
 }, {
  level: 0,
     x: 2,
-    html: '<div onclick=sell4()>Sell Gerrador</div>'
+    html: '<div onclick=sell4()>Sell Gerador</div>'
+}, {
+level: 0,
+    x: 2,
+    html: '<div onclick=sell5()>Sell  houses</div>'
 }, {
 
 }
@@ -59,6 +63,6 @@ for (var a = [], d = 0; d < units.length; ++d) units[d].type === 3 && units[d].o
 }
 window.sell2 = function () {   for (var a = [], d = 0; d < units.length; ++d) units[d].type === 3 && units[d].owner == player.sid && getUnitFromPath(units[d].uPath).name === 'Boulder' && a.push(units[d].id);socket.emit("3", a)}
 window.sell3 = function  (){    for (var a = [], d = 0; d < units.length; ++d) units[d].type === 3 && units[d].owner == player.sid && getUnitFromPath(units[d].uPath).name === 'Spikes' && a.push(units[d].id);socket.emit("3", a)}
-winwos.sell4 = function (){  for (var a = [], d = 0; d < units.length; ++d) units[d].type === 0 && units[d].owner == player.sid && getUnitFromPath(units[d].uPath).name === 'Generator' && a.push(units[d].id);socket.emit("3", a)
+window.sell4 = function (){  for (var a = [], d = 0; d < units.length; ++d) units[d].type === 0 && units[d].owner == player.sid && getUnitFromPath(units[d].uPath).name === 'Generator' && a.push(units[d].id);socket.emit("3", a)
     for (var a = [], d = 0; d < units.length; ++d) units[d].type === 0 && units[d].owner == player.sid && getUnitFromPath(units[d].uPath).name === 'Power Plant' && a.push(units[d].id);socket.emit("3", a)}
-
+window.sell5 = function () { for (var a = [], d = 0; d < units.length; ++d) units[d].type === 0 && units[d].owner == player.sid && getUnitFromPath(units[d].uPath).name === 'House' && a.push(units[d].id);socket.emit("3", a)}
