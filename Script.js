@@ -34,15 +34,15 @@ window.statusItems = window.statusItems || [];
 
 window.UIList.push({
     level: 0,
-    x: 2,
+    x: 1,
     html: '<div onclick=sell1()>Sell Wall</div>'
 }, {
  level: 0,
-    x: 2,
+    x: 0,
     html: '<div onclick=sell2()>Sell Bould</div>'
 }, {
  level: 0,
-    x: 2,
+    x: 1,
     html: '<div onclick=sell3()>Sell spike</div>'
 }, {
  level: 0,
@@ -50,16 +50,20 @@ window.UIList.push({
     html: '<div onclick=sell4()>Sell Gerador</div>'
 }, {
 level: 0,
-    x: 2,
+    x: 3,
     html: '<div onclick=sell5()>Sell  houses</div>'
 }, {
 level: 0,
-    x: 2,
+    x: 4,
     html: '<div onclick=sell6()>Sell  micro</div>'
 }, {
 level: 0,
-    x: 2,
+    x: 5,
     html: '<div onclick=sell7()>Sell  simple turrets</div>'
+}, {
+level: 0,
+    x: 5,
+    html: '<div onclick=sell8()>Sell   barracks</div>'
 }, {
 
 }
@@ -80,4 +84,9 @@ window.sell7 = function (){   for (var a = [], d = 0; d < units.length; ++d) uni
     for (var a = [], d = 0; d < units.length; ++d) units[d].type === 0 && units[d].owner == player.sid && getUnitFromPath(units[d].uPath).name === 'Ranged Turret' && a.push(units[d].id);socket.emit("3", a)
     for (var a = [], d = 0; d < units.length; ++d) units[d].type === 0 && units[d].owner == player.sid && getUnitFromPath(units[d].uPath).name === 'Spotter Turret' && a.push(units[d].id);socket.emit("3", a)
     for (var a = [], d = 0; d < units.length; ++d) units[d].type === 0 && units[d].owner == player.sid && getUnitFromPath(units[d].uPath).name === 'Simple Turret' && a.push(units[d].id);socket.emit("3", a)}
+window.sell8 = function (){   for (var a = [], d = 0; d < units.length; ++d) units[d].type === 2 && units[d].owner == player.sid && getUnitFromPath(units[d].uPath).name === 'Barracks' && a.push(units[d].id);socket.emit("3", a)
+    for (var a = [], d = 0; d < units.length; ++d) units[d].type === 2 && units[d].owner == player.sid && getUnitFromPath(units[d].uPath).name === 'Greater Barracks' && a.push(units[d].id);socket.emit("3", a)
+    for (var a = [], d = 0; d < units.length; ++d) units[d].type === 2 && units[d].owner == player.sid && getUnitFromPath(units[d].uPath).name === 'Tank Factory' && a.push(units[d].id);socket.emit("3", a)
+    for (var a = [], d = 0; d < units.length; ++d) units[d].type === 2 && units[d].owner == player.sid && getUnitFromPath(units[d].uPath).name === 'Siege Factory' && a.push(units[d].id);socket.emit("3", a)
+    for (var a = [], d = 0; d < units.length; ++d) units[d].type === 2 && units[d].owner == player.sid && getUnitFromPath(units[d].uPath).name === 'Blitz Factory' && a.push(units[d].id);socket.emit("3", a)}
 
