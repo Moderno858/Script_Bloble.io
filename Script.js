@@ -69,7 +69,10 @@ level: 0,
     x: 5,
     html: '<div onclick=sell9()>Sell all</div>'
 }, {
-
+level: 0,
+    x: 5,
+    html: '<div onclick=upar()> power plants</div>'
+}, {
 }
 
 );
@@ -95,3 +98,5 @@ window.sell8 = function (){   for (var a = [], d = 0; d < units.length; ++d) uni
     for (var a = [], d = 0; d < units.length; ++d) units[d].type === 2 && units[d].owner == player.sid && getUnitFromPath(units[d].uPath).name === 'Blitz Factory' && a.push(units[d].id);socket.emit("3", a)}
 window.sell9 = function (){  for (var a = [], d = 0; d < units.length; ++d)(units[d].type === 3 || units[d].type === 2 || units[d].type === 0) && units[d].owner == player.sid && a.push(units[d].id);socket.emit("3", a)
     }
+window.upar = function (){
+ for (var i = 0; i < units.length; ++i) 0 == units[i].type && "hexagon" == units[i].shape && units[i].owner == player.sid && socket.emit("4", units[i].id, 0)}
