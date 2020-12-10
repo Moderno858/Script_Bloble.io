@@ -97,7 +97,7 @@ level: 1,
     x: 5,
     html: '<div onclick=upar6()>ranged turret</div>'
 }, {
-    
+
                   level: 1,
     x: 5,
     html: '<div onclick=upar7()>spotter turret</div>'
@@ -105,6 +105,10 @@ level: 1,
                level: 1,
     x: 5,
     html: '<div onclick=upar8()>rapid turret</div>'
+}, {
+                   level: 1,
+    x: 5,
+    html: '<div onclick=upar9()>gatlin turret</div>'
 }, {
 }
 
@@ -140,6 +144,7 @@ window.upar5 = function (){ for (var i = 0; i < units.length; ++i) 0 == units[i]
 window.upar6 = function (){  for(i=0;i<units.length;++i)0==units[i].type&&4==units[i].turretIndex&&"circle"==units[i].shape&&units[i].owner==player.sid&&socket.emit("4",units[i].id,0)}
 window.upar7 = function (){      for(i=0;i<units.length;++i)0==units[i].type&&1==units[i].turretIndex&&"circle"==units[i].shape&&units[i].owner==player.sid&&socket.emit("4",units[i].id,1)}
 window.upar8 = function (){    for(i=0;i<units.length;++i)0==units[i].type&&1==units[i].turretIndex&&"circle"==units[i].shape&&units[i].owner==player.sid&&socket.emit("4",units[i].id,0)}
+window.upar8 = function (){      for(i=0;i<units.length;++i)0==units[i].type&&2==units[i].turretIndex&&"circle"==units[i].shape&&units[i].owner==player.sid&&socket.emit("4",units[i].id,0)}
 
     var contAppend = document.getElementById("gameUiContainer"),
         menuA = document.createElement("div");
