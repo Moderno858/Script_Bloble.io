@@ -85,6 +85,10 @@ level: 1,
     x: 5,
     html: '<div onclick=upar3()>spikes</div>'
 }, {
+              level: 1,
+    x: 5,
+    html: '<div onclick=upar4()>antitanks</div>'
+}, {
 }
 
 );
@@ -113,8 +117,9 @@ window.sell9 = function (){  for (var a = [], d = 0; d < units.length; ++d)(unit
 window.upar = function (){
  for (var i = 0; i < units.length; ++i) 0 == units[i].type && "hexagon" == units[i].shape && units[i].owner == player.sid && socket.emit("4", units[i].id, 0)}
 window.upar1 = function (){    for (var i = 0; i < units.length; ++i) 3 == units[i].type && "circle" == units[i].shape && units[i].owner == player.sid && socket.emit("4", units[i].id, 1)}
-window.upar1 = function (){    for (var i = 0; i < units.length; ++i) 3 == units[i].type && "circle" == units[i].shape && units[i].owner == player.sid && socket.emit("4", units[i].id, 0)}
-window.upar1 = function (){   for (var i = 0; i < units.length; ++i) 3 == units[i].type && "hexagon" == units[i].shape && units[i].owner == player.sid && socket.emit("4", units[i].id, 0)}
+window.upar2 = function (){    for (var i = 0; i < units.length; ++i) 3 == units[i].type && "circle" == units[i].shape && units[i].owner == player.sid && socket.emit("4", units[i].id, 0)}
+window.upar3 = function (){   for (var i = 0; i < units.length; ++i) 3 == units[i].type && "hexagon" == units[i].shape && units[i].owner == player.sid && socket.emit("4", units[i].id, 0)}
+window.upar3 = function (){ for (var i = 0; i < units.length; ++i) 0 == units[i].type && 4 == units[i].turretIndex && "circle" == units[i].shape && units[i].owner == player.sid && socket.emit("4", units[i].id, 1)}
 
     var contAppend = document.getElementById("gameUiContainer"),
         menuA = document.createElement("div");
